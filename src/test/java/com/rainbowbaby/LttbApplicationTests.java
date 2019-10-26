@@ -9,7 +9,7 @@ class LttbApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println("测试提交");
+        System.out.println("测试提交2");
     }
 
 }
