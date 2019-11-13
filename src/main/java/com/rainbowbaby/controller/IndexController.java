@@ -4,6 +4,7 @@ import com.rainbowbaby.my_util.GetMusic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -32,5 +33,11 @@ public class IndexController {
         stringRedisTemplate.opsForValue().set(musicName,str[1]);
         st = "playMusic("+"{\"a\":\""+str[1]+"\"})";
         return st;
+    }
+
+
+    @GetMapping(value="/index")
+    public String ToIndex(){
+        return "index";
     }
 }

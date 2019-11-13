@@ -1,10 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
 </head>
+<style>
+    body {
+        background:url(img/bg.jpg) #f8f6e9 0 0 no-repeat;
+        background-size: cover;
+    }
+
+    .signin {
+        width:477px;
+        height:479px;
+        background:url() no-repeat;
+        margin:0 auto;
+
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin-top:-239px;
+        margin-left:-238px;
+    }
+    .signin-head {
+        margin:0 auto;
+        padding-top:30px;
+        width:120px;
+    }
+    .form-signin {
+        max-width: 330px;
+        padding: 43px 15px 15px 15px;
+        margin: 0 auto;
+    }
+    .form-signin .checkbox {
+        margin-bottom: 10px;
+    }
+    .form-signin .checkbox {
+        font-weight: normal;
+    }
+    .form-signin .form-control {
+        position: relative;
+        font-size: 16px;
+        height: auto;
+        padding: 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .form-signin .form-control:focus {
+        z-index: 2;
+    }
+    .form-signin input[type="text"] {
+        margin-bottom: 14px;
+        border-radius: 0;
+        background: url(img/input.png) 0 0 #bdbdbd no-repeat;
+        background-size: 100% 100%;
+        padding-left:60px;
+        color:#FFFFFF;
+    }
+    .form-signin input[type="password"] {
+        margin-bottom: 10px;
+        border-radius: 0;
+        background: url(img/input.png)0 0 #bdbdbd no-repeat;
+        background-size: 100% 100%;
+        padding-left:60px;
+        color:#FFFFFF;
+    }
+    .form-signin button {
+        border-radius: 0;
+    }
+    .title{
+        color:white;
+        font-weight: bold;
+        text-shadow:7px 7px 3px #000;
+    }
+</style>
+
 <body>
-<p>kai jb</p>
+<div class="signin">
+    <div class="signin-head" style="text-align: center;"><h3 class="title" id="title">音乐网站LOGIN</h3></div>
+    <form class="form-signin" role="form">
+
+        <div id="login" style="display: inline;">
+            <input type="text" class="form-control" placeholder="请输入登录账号"  required=""  id="loginname"/>
+            <input type="password" class="form-control" placeholder="请输入登录密码" required=""   id="loginpwd"/>
+            <button class="btn btn-lg btn-warning "  style="color:white;width:59%;" onclick="loginup()">登录</button>
+            <button class="btn btn-warning "  style="color:white;width:39%;" onclick="toRegister()">去注册</button>
+
+        </div>
+
+        <div id="register" style="display: none;">
+            <input type="text" class="form-control" placeholder="请输入注册账号"  required="" id="registername"/>
+            <input type="password" class="form-control" placeholder="请输入注册密码" required="" id="registerpwd"/>
+            <button class="btn btn-lg btn-warning "  style="color:white;width:59%;" onclick="registerup()">注册</button>
+            <button class="btn  btn-warning "  style="color:white;width:39%;" onclick="toLogin()">去登录</button>
+        </div>
+
+    </form>
+</div>
 </body>
+<script>
+
+    let title=$("#title");
+    let login=$("#login");
+    let register=$("#register");
+    let loginname=$("#loginname");
+    let loginpwd=$("#loginpwd");
+    let registername=$("#registername");
+    let registerpwd=$("#registerpwd");
+    function toRegister(){
+        title.text("音乐网站REGISTER")
+        login.css("display","none")
+        register.css("display","inline")
+    }
+    function toLogin(){
+        title.text("音乐网站LOGIN")
+        login.css("display","inline")
+        register.css("display","none")
+    }
+    function loginup(){
+                //     $.ajax({
+                //         url:"/login",
+                //         type:"post",
+                //         data:{
+                //             user_name:loginname.val(),
+                //             password:loginpwd.val()
+                //         },
+                //         success:res=>{
+                //         if(res.data.login=="true"){
+                //         alert("成功登录")
+                //     }else{
+                //         alert("登录失败")
+                //     }
+                // }
+                // })
+    }
+    function registerup(){
+                //     $.ajax({
+                //         url:"/register",
+                //         type:"post",
+                //         data:{
+                //             user_name:registername.val(),
+                //             password:registerpwd.val()
+                //         },
+                //         success:res=>{
+                //         if(res.data.login=="true"){
+                //         alert("注册成功")
+                //     }else{
+                //         alert("注册失败")
+                //     }
+                // }
+                // })
+    }
+
+</script>
 </html>
